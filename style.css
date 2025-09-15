@@ -1,0 +1,197 @@
+/* === CONTENEDOR PRINCIPAL === */
+.media-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 30px 20px;
+  background-color: #fcebd7;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* === BLOQUES GENERALES === */
+.media-block, .block, .mono-section, .ubicacion, .temas {
+  width: 100%;
+  max-width: 380px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #800000;
+  margin: 0 auto; /* ✅ Esto centra cada bloque */
+}
+
+/* === VIDEO PORTADA === */
+.media-block.portada video {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* === FOTO SECUNDARIA === */
+.media-block.foto-secundaria img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* === MONO IMAGEN === */
+.mono-section img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* === MONO TÍTULO === */
+.mono-section h2 {
+  color: #FF6F91;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* === CONTADOR === */
+#countdown-block h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Contenedor tipo grid */
+#contador {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 40px;
+  justify-items: center;
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  color: #800000;
+}
+
+/* Bloque de cada unidad de tiempo */
+#contador div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Número grande */
+#contador span.number {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #9b1c1c;
+}
+
+/* Etiqueta pequeña */
+#contador span.label {
+  font-size: 1.1rem;
+  color: #5c5c5c;
+  font-weight: 400;
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* === MENSAJE DEL DÍA === */
+.mensaje-dia {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #a03030;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* === UBICACIÓN Y TEMAS === */
+.ubicacion h2, .temas h2 {
+  color: #800000;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ubicacion p, .temas p {
+  font-style: italic;
+  color: #5c5c5c;
+  margin-bottom: 15px;
+}
+
+/* === SPOTIFY BOTÓN === */
+.spotify-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spotify-button {
+  display: inline-block;
+  background-color: #1DB954;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.spotify-button:hover {
+  background-color: #14833b;
+}
+
+/* === MAPA === */
+.map-container iframe {
+  width: 100%;
+  border-radius: 12px;
+  height: 250px;
+}
+
+/* === FOOTER === */
+.footer {
+  margin-top: 40px;
+  width: 100vw; /* 👈 Asegura que se expanda a todo el ancho */
+  background-color: #a03030; /* 🔴 Rojo oscuro bonito */
+  text-align: center;
+  color: white;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  padding: 20px 0; /* 👈 Buen alto sin ocupar demasiado */
+  box-sizing: border-box;
+}
+
+
+/* === RESPONSIVE: Mobile === */
+@media screen and (max-width: 480px) {
+  #contador {
+    gap: 30px 20px;
+  }
+
+  #contador span.number {
+    font-size: 2.8rem;
+  }
+
+  #contador span.label {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .block, .media-block, .ubicacion, .temas {
+    padding: 16px;
+  }
+
+  .spotify-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
