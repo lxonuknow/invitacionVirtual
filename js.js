@@ -38,3 +38,35 @@ actualizarContador();
     document.addEventListener('click', playAudio, { once: true });
     document.addEventListener('touchstart', playAudio, { once: true });
   });
+
+  window.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audioBienvenida');
+
+    const playAudio = () => {
+      audio.play().catch((error) => {
+        console.log("Autoplay bloqueado. Requiere interacción del usuario.");
+      });
+    };
+
+    playAudio();
+
+    // En caso de bloqueo, activa con primer clic/tap
+    document.addEventListener('click', playAudio, { once: true });
+    document.addEventListener('touchstart', playAudio, { once: true });
+
+    // 🔇 Detener audio si el usuario cambia de pestaña o minimiza
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        audio.pause();
+        audio.currentTime = 0; // Reinicia el audio si quieres
+      }
+    });
+
+    // 🔇 Detener si navega fuera (opcional)
+    window.addEventListener('pagehide', () => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  });
+
+
