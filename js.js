@@ -22,3 +22,19 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+  window.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('audioBienvenida');
+
+    // Intenta reproducir el audio automáticamente
+    const playAudio = () => {
+      audio.play().catch((error) => {
+        console.log("El navegador bloqueó la reproducción automática. Esperando interacción del usuario.");
+      });
+    };
+
+    playAudio();
+
+    // Por si el navegador bloquea el autoplay, lo activamos al primer click o toque
+    document.addEventListener('click', playAudio, { once: true });
+    document.addEventListener('touchstart', playAudio, { once: true });
+  });
